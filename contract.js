@@ -92,7 +92,7 @@ var contract = (function(module) {
           var val = copy.args[key];
 
           // We have BN. Convert it to BigNumber
-          if (val.constructor.isBN) {
+          if (val && val.constructor.isBN) {
             copy.args[key] = C.web3.toBigNumber("0x" + val.toString(16));
           }
         });
